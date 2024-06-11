@@ -17,9 +17,13 @@ const fetchBooks = async (): Promise<Book[]> => {
 };
 
 const Home = async () => {
-    const data = await fetchBooks();
-    console.log(data)
-    return <BookList books={data} />;
+    try {
+        const data = await fetchBooks();
+        console.log(data)
+        return <BookList books={data}/>;
+    } catch (e) {
+        console.log(e)
+    }
 };
 
 export default Home;
