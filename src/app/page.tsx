@@ -3,19 +3,13 @@ import {Book} from '../types/index';
 
 import BookList from "@/components/BookList";
 
-/*
-const getBooks = async(): Promise<BookResponse> => {
-    const response = await fetch('http://localhost:3000/api/books', {headers: {"Content-Type": "application/json"}});
-    return await response.json();
-}*/
-
-
 const fetchBooks = async (): Promise<Book[]> => {
-    const t = new Date().getTime();
-    const books = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}api/books?t=`+t, {
+
+    console.log(`${process.env.NEXT_PUBLIC_API_BASE}api/books`);
+
+    const books = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}api/books`, {
         headers: {
-            "Content-Type": "application/json",
-            "Cache": "no-cache"
+            "Content-Type": "application/json"
         },
     });
 
@@ -30,15 +24,3 @@ const Home = async () => {
 
 export default Home;
 
-/*
-export default async function Home() {
-
-    const response = await fetchBooks();
-
-    return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            Liste des livres
-            <BookList books={response.books}/>
-        </main>
-    );
-}*/
