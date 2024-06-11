@@ -35,7 +35,7 @@ const insertBook = async (_prevState: unknown, formData: FormData) => {
 
         await executeQuery<Promise<void>, {title: string, summary: string}>(
             connection,
-            "INSERT INTO books SET ?",
+            "INSERT INTO Books SET ?",
             { title: data.title!.toString(), summary: data.summary!.toString() }
         )
 

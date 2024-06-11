@@ -10,7 +10,7 @@ export async function POST(nextRequest: NextRequest){
     connection.connect()
     const inserted = await executeQuery(connection,
         //"INSERT INTO reviews(text) VALUES (?)",
-        "INSERT INTO reviews SET ?",
+        "INSERT INTO Reviews SET ?",
         {text: body.textReview})
     connection.end()
     /*

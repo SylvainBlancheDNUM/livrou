@@ -28,7 +28,7 @@ export async function GET(){
 export async function GET(){
     const connection = await createConnection();
     connection.connect()
-    const books = await executeQuery(connection, "SELECT * FROM books", undefined)
+    const books = await executeQuery(connection, "SELECT * FROM Books", undefined)
     connection.end()
     /*
     if (!books) {
