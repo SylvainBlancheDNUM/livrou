@@ -12,7 +12,7 @@ const getBooks = async(): Promise<BookResponse> => {
 
 const fetchBooks = async (): Promise<Book[]> => {
     const t = new Date().getTime();
-    const books = await fetch(`${process.env.API_BASE}api/books?t=`+t, {
+    const books = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}api/books?t=`+t, {
         headers: {
             "Content-Type": "application/json",
             "Cache": "no-cache"

@@ -1,6 +1,6 @@
 import {NextRequest, NextResponse} from "next/server";
 import {Book} from "@/types";
-import {createConnection, executeQuery} from "@/utils/mysql.ts.back";
+import {createConnection, executeQuery} from "@/utils/mysql";
 
 /*
 export async function GET(
