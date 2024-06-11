@@ -1,8 +1,8 @@
 "use server";
 
-import { executeQuery, createConnection } from "@/utils/mysql.ts.back";
 import { z } from "zod";
 import { revalidatePath } from 'next/cache';
+import {createConnection, executeQuery} from "@/utils/mysql";
 
 const NewBookSchema = z.object({
     title: z.string().min(1, {message: "Ne peut être vide !"}),
