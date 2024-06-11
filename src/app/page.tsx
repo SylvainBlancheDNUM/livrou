@@ -7,7 +7,7 @@ const fetchBooks = async (): Promise<Book[]> => {
 
     console.log(`${process.env.NEXT_PUBLIC_API_BASE}api/books`);
 
-    const books = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}api/books`, {
+    const books = await fetch(`${process.env.API_BASE}api/books`, {
         headers: {
             "Content-Type": "application/json"
         },
