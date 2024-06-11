@@ -26,13 +26,17 @@ export async function GET(){
 }*/
 
 export async function GET(){
-    const connection = await createConnection();
-    connection.connect()
-    const books = await executeQuery(connection, "SELECT * FROM Books", undefined)
-    connection.end()
-    /*
-    if (!books) {
-        return NextResponse.error();
-    }*/
-    return NextResponse.json(books, {status: 200});
+    try {
+        const connection = await createConnection();
+        connection.connect()
+        const books = await executeQuery(connection, "SELECT * FROM Books", undefined)
+        connection.end()
+        /*
+        if (!books) {
+            return NextResponse.error();
+        }*/
+        return NextResponse.json(books, {status: 200});
+    } catch (e) {
+        return NextResponse.json([])
+    }
 }
