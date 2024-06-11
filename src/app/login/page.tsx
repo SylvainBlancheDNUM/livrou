@@ -7,11 +7,15 @@ const getToken = async (): Promise<{ csrfToken: string }> => {
 };
 
 const Login = async () =>{
-    const token = await getToken();
-    return <div className={"w-full flex content-center justify-center"}>
+    try {
+        const token = await getToken();
+        return <div className={"w-full flex content-center justify-center"}>
 
-        <LoginForm csrfToken={token.csrfToken} />
-    </div>
+            <LoginForm csrfToken={token.csrfToken}/>
+        </div>
+    } catch (e) {
+        return <div></div>
+    }
 }
 
 export default Login
