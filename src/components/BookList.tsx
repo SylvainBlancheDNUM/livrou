@@ -10,7 +10,7 @@ type BookListProps = {
 
 const BookList: FC<BookListProps> = ({ books }) => {
     return (
-        <div className="w-full">
+        <div className="flex flex-col justify-center">
             {books.map((b) => {
                 return <BookCard key={b.id} book={b} />;
             })}

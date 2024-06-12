@@ -25,6 +25,8 @@ export async function GET(){
     return NextResponse.json(books, {status: 200});
 }*/
 
+export const dynamic = "force-dynamic";
+
 export async function GET(){
     try {
         const connection = await createConnection();

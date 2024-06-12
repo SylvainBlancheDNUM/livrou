@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { revalidatePath } from 'next/cache';
+import {revalidatePath, revalidateTag} from 'next/cache';
 import {createConnection, executeQuery} from "@/utils/mysql";
 
 const NewBookSchema = z.object({
